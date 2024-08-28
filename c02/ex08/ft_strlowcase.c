@@ -6,16 +6,12 @@
 /*   By: smendez- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 16:01:40 by smendez-          #+#    #+#             */
-/*   Updated: 2024/08/25 17:18:17 by smendez-         ###   ########.fr       */
+/*   Updated: 2024/08/27 14:14:53 by smendez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-
-char	*t_strlowcase(char *str)
+char	*ft_strlowcase(char *str)
 {
-	int	a;
 	int	i;
 
 	i = 0;
@@ -29,14 +25,15 @@ char	*t_strlowcase(char *str)
 	}
 	return (str);
 }
-
+/*
+#include <stdio.h>
 int	main(void)
 {
 	char	output;
-	char	*hi1;
+	char	hi1[] = "AAAs@dGAWEfs2kgGESAldf3slDkfZZZ";
 
-	hi1 = "AAAs@dGAWEfs2kgGESAldf3slDkfZZZ";
-	output = *t_strlowcase(hi1);
+	output = *ft_strlowcase(hi1);
 	printf("Upper: %s", hi1);
 	return (0);
 }
+*/

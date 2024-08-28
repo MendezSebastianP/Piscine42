@@ -6,11 +6,9 @@
 /*   By: smendez- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 14:34:44 by smendez-          #+#    #+#             */
-/*   Updated: 2024/08/25 14:58:53 by smendez-         ###   ########.fr       */
+/*   Updated: 2024/08/27 11:01:18 by smendez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
@@ -30,6 +28,8 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	return (dest);
 }
 
+/* ok
+#include <stdio.h>
 int	main(void)
 {
 	char	*src;
@@ -40,3 +40,4 @@ int	main(void)
 	printf("Copied string: %s\n", dest);
 	return (0);
 }
+*/

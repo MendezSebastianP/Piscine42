@@ -6,11 +6,9 @@
 /*   By: smendez- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 14:34:44 by smendez-          #+#    #+#             */
-/*   Updated: 2024/08/26 14:53:07 by smendez-         ###   ########.fr       */
+/*   Updated: 2024/08/27 11:00:55 by smendez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 char	*ft_strcpy(char *dest, char *src)
 {
@@ -26,6 +24,7 @@ char	*ft_strcpy(char *dest, char *src)
 	return (dest);
 }
 /* ok
+#include <stdio.h>
 int	main(void)
 {
 	char	*src;

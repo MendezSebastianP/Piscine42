@@ -6,15 +6,13 @@
 /*   By: smendez- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 14:34:44 by smendez-          #+#    #+#             */
-/*   Updated: 2024/08/26 09:32:04 by smendez-         ###   ########.fr       */
+/*   Updated: 2024/08/27 17:38:34 by smendez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	size_t	i;
+	unsigned int	i;
 
 	i = 0;
 	if (size != 0)
@@ -32,6 +30,9 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	}
 	return (i);
 }
+/* ok
+#include <stdio.h>
+#include <string.h>
 
 int	main(void)
 {
@@ -39,9 +40,10 @@ int	main(void)
 	char	dest[20];
 	size_t	copiedlen;
 
-	copiedlen = ft_strlcpy(dest, src, 15);
 	src = "Hello, world!";
+	copiedlen = ft_strlcpy(dest, src, 15);
 	printf("Copied string: %s\n", dest);
 	printf("Expected length: %lu, Copied length: %lu\n", strlen(src), copiedlen);
 	return (0);
 }
+*/
