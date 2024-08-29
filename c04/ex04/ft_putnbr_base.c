@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smendez- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/21 09:04:10 by smendez-          #+#    #+#             */
-/*   Updated: 2024/08/28 10:47:34 by smendez-         ###   ########.fr       */
+/*   Created: 2024/08/29 12:11:53 by smendez-          #+#    #+#             */
+/*   Updated: 2024/08/29 15:21:44 by smendez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	int	i;
+#include <unistd.h>
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-/* ok
-#include <stdio.h>
-int	main()
+void    hexachr(int nbr, char *base )
 {
-	char	*str;
-	int	numb;
+	int	size;
 
-	str = "";
-	numb = ft_strlen(str);
-	printf("Result: %d",numb);
-	return (0);
+	size = 0;
+	while(base[size] != '\0')
+		size++;
+        write(1, &base[nbr / size], 1);
+        write(1, &base[nbr % size], 1);
+	write(1, "\n", 1);
 }
-*/
+
+int	main(void)
+{
+	int	t1;
+	char	*t2;
+
+	t1 = 99;
+	t2 = "0123456789";
+	hexachr(t1, t2);
+}
+
+
+

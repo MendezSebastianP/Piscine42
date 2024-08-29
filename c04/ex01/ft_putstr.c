@@ -6,31 +6,32 @@
 /*   By: smendez- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 09:31:24 by smendez-          #+#    #+#             */
-/*   Updated: 2024/08/21 09:39:32 by smendez-         ###   ########.fr       */
+/*   Updated: 2024/08/28 18:02:48 by smendez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <unistd.h>
 
 void	ft_putstr(char *str)
 {
-	int	i;
+	int		i;
 	char	a1;
 
-	while(str[i] != '\0')
+	i = 0;
+	while (str[i] != '\0')
 	{
 		a1 = str[i];
-		write(1, &a1,1);
+		write(1, &a1, 1);
 		i++;
 	}
 }
-
+/*
 int	main(void)
 {
 	char	*b1;
 
-	b1 = "Vamos a print esta monda";
+	b1 = "sfdsfsdf";
 	ft_putstr(b1);
 	return (0);
 }
+*/

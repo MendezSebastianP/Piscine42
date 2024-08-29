@@ -1,36 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smendez- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/21 09:04:10 by smendez-          #+#    #+#             */
-/*   Updated: 2024/08/28 10:47:34 by smendez-         ###   ########.fr       */
+/*   Created: 2024/08/29 19:10:26 by smendez-          #+#    #+#             */
+/*   Updated: 2024/08/29 19:50:45 by smendez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	int	i;
+#include <stdio.h>
 
-	i = 0;
-	while (str[i] != '\0')
+int	ft_sqrt(int nb)
+{
+	int 	i;
+	int	n;
+
+	i = 1;
+	n = 1;
+	if (nb < 4 || nb > 2147395600)
+		return(0);
+	while (n != nb && n < nb)
 	{
 		i++;
+		n = i * i;
 	}
+	printf("i = %d \n",i);
+	printf("n = %d \n",n);
+	if (n != nb)
+		return (0);
 	return (i);
 }
-/* ok
-#include <stdio.h>
-int	main()
-{
-	char	*str;
-	int	numb;
 
-	str = "";
-	numb = ft_strlen(str);
-	printf("Result: %d",numb);
+int	main(void)
+{
+	printf("sqrt = %d", ft_sqrt(2147395600));
 	return (0);
 }
-*/

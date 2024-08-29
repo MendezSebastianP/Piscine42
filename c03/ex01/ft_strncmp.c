@@ -6,46 +6,46 @@
 /*   By: smendez- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 16:39:09 by smendez-          #+#    #+#             */
-/*   Updated: 2024/08/26 14:37:18 by smendez-         ###   ########.fr       */
+/*   Updated: 2024/08/28 17:32:40 by smendez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-
-int	sum(char *s1, int n)
+int	sum(char *s1, char *s2, unsigned int n)
 {
-	int	i;
-	int	sum;
+	unsigned int	j;
+	unsigned int	i;
 
 	i = 0;
-	sum = 0;
-	while(s1[i] != '\0' && n != i)
-	{
-		sum += s1[i];
+	j = 0;
+	while (s1[i] != '\0' && s1[i] == s2[i] && i < n - 1)
 		i++;
-	}
-	return (sum);
+	j = s1[i] - s2[i];
+	return (j);
 }
 
-int	ft_strncmp(char *s1, char *s2,unsigned int n)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	int	i;
-	int	j;
-	int	t1;
 
-	i = sum(s1, n);
-	j = sum(s2, n);
-	t1 = i-j;
-	return(t1);
+	if (n == 0)
+		return (0);
+	i = sum(s1, s2, n);
+	return (i);
 }
+/* ok
+#include <stdio.h>
+#include <string.h>
 
 int main() {
-    char str[] = "bbasdasdasd";
-    char str2[] = "ba";
+    char str[] = "dddddddd";
+    char str2[] = "d7ddd";
     int sum1;
+    int sum2;
 
-    sum1 = ft_strncmp(str2, str, 6);
-    printf("%d", sum1);
+    sum1 = ft_strncmp(str, str2, 20);
+    sum2 = strncmp(str, str2, 20);
+    printf("our result: %d \n", sum1);
+    printf("intended result: %d", sum2);
     return 0;
 }
+*/

@@ -6,7 +6,7 @@
 /*   By: smendez- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 13:58:31 by smendez-          #+#    #+#             */
-/*   Updated: 2024/08/20 08:56:37 by smendez-         ###   ########.fr       */
+/*   Updated: 2024/08/29 09:43:22 by smendez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,12 +65,13 @@ void	ft_putnbr(int a1)
 	b1 = a1 + 48;
 	write(1, &b1, 1);
 }
-
+/*
 int	main(void)
 {
 	int	test;
 
 	test = -234;
-	ft_putnbr(test);
+	ft_putnbr(-2147483648);
 	return (0);
 }
+*/

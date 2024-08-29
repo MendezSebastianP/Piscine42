@@ -1,46 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smendez- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 19:22:45 by smendez-          #+#    #+#             */
-/*   Updated: 2024/08/28 17:33:46 by smendez-         ###   ########.fr       */
+/*   Created: 2024/08/28 14:27:55 by smendez-          #+#    #+#             */
+/*   Updated: 2024/08/28 20:01:44 by smendez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dest, const char *src)
+char	*ft_strstr(char *str, char *to_find)
 {
 	int	i;
 	int	j;
 
 	i = 0;
 	j = 0;
-	while (dest[j] != '\0')
-		j++;
-	while (src[i] != '\0')
+	if (to_find[i] == '\0')
+		return (str);
+	while (str[i] != '\0')
 	{
-		dest[j + i] = src[i];
+		while (str[i + j] == to_find[j])
+		{
+			if (to_find[j + 1] == '\0')
+			{
+				return (&str[i]);
+			}
+			j++;
+		}
 		i++;
+		j = 0;
 	}
-	dest[j + i] = '\0';
-	return (dest);
+	return (0);
 }
-/* ok
+/*
 #include <string.h>
 #include <stdio.h>
+int	main(void)
+{
+	char	*ex1;
+	char	*ex2;
+	char	*s1;
+	char	*s2;
 
-int main() {
-    char str[50] = "";
-    char str2[] = "dsjnf";
-    char *cat1;
-    char *cat2;
-
-    cat1 = ft_strcat(str, str2);
-    cat2 = strcat(str, str2);
-    printf("our result: %s \n", cat1);
-    printf("intended result: %s", cat2);
-    return 0;
+	s1 = "KIKIRIKI lala";
+	s2 = "RI";
+	ex1 = ft_strstr(s1, s2);
+	ex2 = strstr(s1, s2);
+	printf("ft_strstr result: %s\n", ex1);
+	printf("intended result : %s", ex2);
+	return (0);
 }
 */
