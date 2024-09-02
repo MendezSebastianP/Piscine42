@@ -6,7 +6,7 @@
 /*   By: smendez- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 10:49:02 by smendez-          #+#    #+#             */
-/*   Updated: 2024/08/31 16:39:48 by smendez-         ###   ########.fr       */
+/*   Updated: 2024/09/02 14:49:43 by smendez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ int	error(char *base)
 				return (1);
 			j++;
 		}
-		if (base [i] == 32 || base [i] == 43 || base [i] == 45)
+		if (base[i] == 32 || base[i] == 43 || base[i] == 45
+			|| (base[i] > 8 && base[i] < 14))
 			return (1);
 		i++;
 	}
@@ -86,18 +87,25 @@ int	ft_atoi_base(char *str, char *base)
 		return (k * -1);
 	return (k);
 }
-/* ok
+/*
 #include <stdio.h>
 int	main(void)
 {
 	char*	str;
 	char*	base;
-	int	a;
 	
-	str = "111111";
-	base = "";
-	a = ft_atoi_base(str, base);
-	printf("%d", a);
+	str = " \n---2147483648";
+	base = "012345\n6789";
+	printf("%d\n", ft_atoi_base(str, base));
+	str = "\n    \n   \r\t\v\n      +-+-+-+++++----+-91597ag8481";
+	base = "0123456789";
+	printf("%d\n", ft_atoi_base(str, base));
+	str = " \n\r\r--++++101010";
+	base = "01";
+	printf("%d\n", ft_atoi_base(str, base));
+	str = " \n\r\r--++-+--ff";
+	base = "0123456789abcdef";
+	printf("%d\n", ft_atoi_base(str, base));
 	return(0);
 }
 */

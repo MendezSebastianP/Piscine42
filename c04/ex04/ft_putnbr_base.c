@@ -6,7 +6,7 @@
 /*   By: smendez- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 12:11:53 by smendez-          #+#    #+#             */
-/*   Updated: 2024/08/31 16:37:30 by smendez-         ###   ########.fr       */
+/*   Updated: 2024/09/02 14:49:00 by smendez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,12 @@ int	error(char *base)
 	return (0);
 }
 
-void	ft_putnbr_base(int nbr, char *base )
+void	ft_putnbr_base(int nbr, char *base)
 {
-	int	size;
+	int			size;
+	long int	nb;
 
+	nb = nbr;
 	size = 0;
 	while (base[size] != '\0')
 		size++;
@@ -53,23 +55,23 @@ void	ft_putnbr_base(int nbr, char *base )
 	if (nbr < 0)
 	{
 		f1('-');
-		nbr = -nbr;
+		nb = -nb;
 	}
-	if (nbr < size)
-		f1(base[nbr]);
+	if (nb < size)
+		f1(base[nb]);
 	else
 	{
-		ft_putnbr_base(nbr / size, base);
-		ft_putnbr_base(nbr % size, base);
+		ft_putnbr_base(nb / size, base);
+		ft_putnbr_base(nb % size, base);
 	}
 }
-/* ok
+/*
 int	main(void)
 {
 	int	t1;
 	char	*t2;
 
-	t1 = -234234234;
+	t1 = 2342346;
 	t2 = "0123456789ABCDEF";
 	ft_putnbr_base(t1, t2);
 }
